@@ -1,0 +1,78 @@
+.error{
+	color: red;
+	font-style:italic;
+	display: inline;
+}
+body>div>img{width: 50%;margin-left: 20%}
+body>div>div>h1{color: rgb(184, 38, 38);font-weight: bold;text-align: center;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+div>div>img{width: 20px;margin-right: 12px;}
+div>nav{float: left;}
+div ul li a {text-decoration:white;}
+nav h1{margin-bottom: 15px;text-shadow: brown;}
+nav>.panel-info{border:2px solid rgb(113, 104, 104);}
+/*#body-panel{background-color: rgb(115, 167, 211);}*/
+
+/*mise en page de la menu*/
+/*div>div>a>img{width: 15px;margin-left: 0px;}
+/*Mise en page de la page*/
+tr, td{border:1px }
+#numero_box,#loge,#securt{width: 152px}
+#anc_nom,#nouv_code,#anc_code,#ncode,#confir_code,#nom_c,#code,#mdps,#cmdp{width: 352px}
+#Logement,#electricite{float: right;}
+#Logement2{float: left;margin-left: 3px;}
+#filr{margin-left: 82px;}
+#contact_cli{margin-left: 75px;width: 16%;}
+h6{color: rgb(184, 38, 38);font-style: italic;font-family: 'Times New Roman', Times, serif;}
+div>div>img{margin-bottom: 3px;}
+table{margin-top: 10px;}
+tr,td{border: 1px ;}
+table td img{width: 19px;height: 18px;}
+#login,#photologin{margin-top: 50px;}
+#photologin{width: 135px;}
+#date_nais{margin-left: 75px;}
+#cin{margin-left: 113px;width: 16%;}
+#date_cin{width: 16%;}
+#n_epous{width: 123px;}
+#mbd{visibility: hidden;}
+#nb_enf,#p_resp{width: 42px;}
+#nif{margin-left: 104px;}
+#rc,#c_banc,#nif,#an_met,#lotClient{width: 18%;}
+#lotClient{margin-left: 3px;}
+#stat{width: 22%;}
+#rc{margin-left: 109px;}
+#lbcb{margin-left: 24px;}
+#c_banc{margin-left: 15px;}
+#labstat,#labmet{margin-left: 25px;}
+#meti{width: 19%;}
+#an_met{margin-left: 28px}
+#meti{width: 16%;}
+#mat_uti{margin-left: 22px;}
+#durt{margin-left: 8px;}
+#lng,#lrg{width: 55px;}
+#corps{float: left;}
+#titre{text-align: center;font-weight: bold;}
+#stitre{text-align: justify;font-weight: bolder;}
+#num_box{margin-left: 108px;}
+#pr_fac{margin-left: 105px;}
+#v_ant{margin-left: 60px;width: 126px;}
+#datecpt{margin-right: 20px;}
+#nomcpt,#pr_fac{width: 48%;}
+#nomcpt{margin-left: 59px;}
+#sommecpt{margin-left: 64px;}/*
+#nomappli{margin-left:6px ;}
+#societe{margin-left:101px ;}
+#Representant{margin-left:59px ;}
+#Localisation{margin-left: 68px;}
+#adressoc{margin-left:104px ;}
+#respoonsable{margin-left: 62px;}
+#adrespsoc{margin-left: 0px;}
+#entente{margin-left:104px ;}
+#cout{margin-left: 30px;}
+#corpmenu{margin-left: 40px;width: 100%;height: 40%;}*/
+/*#btn-site{margin-left: 75%}
+menu{float: left;}
+#body img{width: 25px;margin-right: 12px;margin-bottom: 2px;margin-top: 1px}
+#body h1{margin-left: 5%}
+footer{	margin-bottom: 0%;margin-top: 2%}
+h4 a{margin-right: 25px;color: white}
+div>form>a{margin-left: 100%;width: 180px;}*/

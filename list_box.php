@@ -1,0 +1,1 @@
+<?php require_once("centre.php");$query_box="SELECT * FROM piece ORDER BY N_box";$info=$pdo->prepare($query_box);$info->execute() ;?>

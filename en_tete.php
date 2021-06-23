@@ -1,0 +1,1 @@
+<h1><?php require_once("list_client.php");while ($par=$parm->fetch()){; echo(($par["nom_appli"]) ." ". ($par["societe"])." ".($par["localisation"]) ); };?></h1>
