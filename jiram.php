@@ -6,7 +6,6 @@
 	$req="SELECT DISTINCT num_box FROM Client Where num_box <>'".($et_jiram['jirabox'])."'";
 	$liaison=$pdo->prepare($req);
 	$liaison->execute();
-
 ?>
 <div class="col-md-12 col-xs-12 spacer">
 	<div class="panel panel-info">

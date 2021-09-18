@@ -14,6 +14,7 @@ $ficlib=$psb->fetch();*/
 $prm=("SELECT * FROM parametre ");
 $rmp=$pdo->prepare($prm);
 $rmp->execute();while($p=$rmp->fetch()){;
+//$dt=date("d-m-Y",,strtotime($row['date_vente']))
 
 require("fpdf.php");
 $pdf= new FPDF();

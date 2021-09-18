@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  lun. 08 fév. 2021 à 15:48
+-- Généré le :  sam. 18 sep. 2021 à 08:46
 -- Version du serveur :  10.4.6-MariaDB
 -- Version de PHP :  7.3.9
 
@@ -91,7 +91,7 @@ CREATE TABLE `client` (
 --
 
 INSERT INTO `client` (`idclient`, `Nom`, `Prenom`, `date_naissance`, `lieu_naissance`, `n_cin`, `date_cin`, `lieu_cin`, `Parent`, `Mr`, `Profession`, `date_vente`, `cuation`, `adress_client`, `Lot_client`, `photo`, `telephone`, `num_box`, `email_cli`, `cit_fam`, `epous`, `enfant`, `nif`, `stat`, `rcc`, `cbanc`, `amet`, `met`, `per_respo`, `mat_uti`, `dur_met`) VALUES
-(18, 'RASOANOMENJANAHARY', 'Yvonne', '1990-07-02', 'BENATO - TOLIARA', '216001098878', '2019-12-03', 'ihosy', '', 'VERO', 'GARGOTTE, PATISSERIE', '2021-02-23', 240000, 'TANAMBAO - IHOSY', '50000', 'TANAMBAO.JPG', '0322009090', 1, 'r9.rmjvi@gmail.com', 'Mpitovo', '', 0, '', '', '', '', '', 'CUISINER', 2, 'PATISSERIE', '');
+(21, 'RANDRIANASOLO', 'Mariot Hutler', '1998-01-15', 'IHOSY', '201611022322', '2001-04-15', 'mahasoa', '', 'MARIE YVONNE', 'MPIVAROTRA', '2020-04-29', 400000, 'TANAMBAO', 'IIVM', 'VLCSNAP-2021-08-23-11H42M46S252.PNG', '0322305048', 2, '', 'Mpanambady', '', 0, '', '', '', '', '', 'VENDEUSE', 2, '', '');
 
 -- --------------------------------------------------------
 
@@ -125,6 +125,7 @@ CREATE TABLE `depense` (
 --
 
 CREATE TABLE `hofa` (
+  `idhofa` int(11) NOT NULL,
   `caution_box` int(11) NOT NULL,
   `date_entre` date NOT NULL,
   `pers_pay` varchar(255) COLLATE utf8_bin NOT NULL,
@@ -138,9 +139,8 @@ CREATE TABLE `hofa` (
 -- Déchargement des données de la table `hofa`
 --
 
-INSERT INTO `hofa` (`caution_box`, `date_entre`, `pers_pay`, `somme_pay`, `date_pay`, `pers_vers`, `somme_vers`) VALUES
-(1, '0000-00-00', 'RASOANOMENJANAHARY Firmine', 400000, '2021-02-16', '400000', 400000),
-(2, '0000-00-00', 'RASOANOMENJANAHARY Yvonne', 200000, '2021-02-05', '200000', 200000);
+INSERT INTO `hofa` (`idhofa`, `caution_box`, `date_entre`, `pers_pay`, `somme_pay`, `date_pay`, `pers_vers`, `somme_vers`) VALUES
+(4, 2, '0000-00-00', 'BEMA ', 120000, '2020-11-26', '120000', 120000);
 
 -- --------------------------------------------------------
 
@@ -160,14 +160,6 @@ CREATE TABLE `jiram` (
   `notif` varchar(255) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
---
--- Déchargement des données de la table `jiram`
---
-
-INSERT INTO `jiram` (`idjirm`, `N_box`, `date_pres`, `date_fact`, `val_prs`, `conso`, `somme_vers`, `ntp`, `notif`) VALUES
-(12, 1, '2021-01-01', '2021-02-01', '00010', '10', 7000, '6900', '100'),
-(13, 1, '2021-02-01', '2021-03-01', '00040', '30', 35000, '10700', '24300');
-
 -- --------------------------------------------------------
 
 --
@@ -185,7 +177,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`crt`, `user`, `mdp`) VALUES
-('Administrateur', 'Administrateur', 'e3afed0047b08059d0fada10f400c1e5');
+('Administrateur', 'Administrateur', 'e3afed0047b08059d0fada10f400c1e5'),
+('Secretaire', 'Secretaire', 'f46787def5aeec965f9308ac0689f09f');
 
 -- --------------------------------------------------------
 
@@ -214,7 +207,7 @@ CREATE TABLE `parametre` (
 --
 
 INSERT INTO `parametre` (`nom_appli`, `societe`, `representant`, `localisation`, `adress_soc`, `respo_soc`, `cin_respo`, `dcin_respo`, `adress_respo`, `entete`, `corps_menu`, `foot`, `kwt`) VALUES
-('', '', '', '', '', '', '', '', '', '', '', '', '190');
+('GESTION D\'Ã‰TABLISSEMENT', '', 'By RMJVI', '', 'LOT IVM 54 ', 'JHON', '', '', 'ANTANIMANDRY IHOSY 313', '', '', '', '190');
 
 -- --------------------------------------------------------
 
@@ -226,6 +219,7 @@ CREATE TABLE `piece` (
   `N_box` int(11) NOT NULL,
   `hofa` double NOT NULL,
   `securite` double NOT NULL,
+  `emplacement` varchar(255) COLLATE utf8_bin NOT NULL,
   `longueur` varchar(11) COLLATE utf8_bin NOT NULL,
   `largeur` varchar(11) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -234,10 +228,8 @@ CREATE TABLE `piece` (
 -- Déchargement des données de la table `piece`
 --
 
-INSERT INTO `piece` (`N_box`, `hofa`, `securite`, `longueur`, `largeur`) VALUES
-(1, 450000, 5000, '16,4', '12,4'),
-(2, 340000, 50000, '34', '12'),
-(3, 540000, 54000, '14', '13');
+INSERT INTO `piece` (`N_box`, `hofa`, `securite`, `emplacement`, `longueur`, `largeur`) VALUES
+(2, 200000, 17000, 'Rez de chaussee', '', '');
 
 --
 -- Index pour les tables déchargées
@@ -266,6 +258,7 @@ ALTER TABLE `cuat`
 -- Index pour la table `hofa`
 --
 ALTER TABLE `hofa`
+  ADD PRIMARY KEY (`idhofa`),
   ADD KEY `N_box` (`caution_box`);
 
 --
@@ -295,13 +288,19 @@ ALTER TABLE `archivage`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `idclient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `idclient` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT pour la table `hofa`
+--
+ALTER TABLE `hofa`
+  MODIFY `idhofa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `jiram`
 --
 ALTER TABLE `jiram`
-  MODIFY `idjirm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `idjirm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Contraintes pour les tables déchargées
@@ -317,19 +316,19 @@ ALTER TABLE `client`
 -- Contraintes pour la table `cuat`
 --
 ALTER TABLE `cuat`
-  ADD CONSTRAINT `cuat_ibfk_1` FOREIGN KEY (`N_box`) REFERENCES `piece` (`N_box`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `cuat_ibfk_1` FOREIGN KEY (`N_box`) REFERENCES `client` (`num_box`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `hofa`
 --
 ALTER TABLE `hofa`
-  ADD CONSTRAINT `hofa_ibfk_1` FOREIGN KEY (`caution_box`) REFERENCES `piece` (`N_box`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `hofa_ibfk_1` FOREIGN KEY (`caution_box`) REFERENCES `client` (`num_box`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Contraintes pour la table `jiram`
 --
 ALTER TABLE `jiram`
-  ADD CONSTRAINT `jiram_ibfk_1` FOREIGN KEY (`N_box`) REFERENCES `piece` (`N_box`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `jiram_ibfk_1` FOREIGN KEY (`N_box`) REFERENCES `client` (`num_box`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

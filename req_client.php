@@ -21,7 +21,7 @@
                     <tr>
                       <td><?php echo($row['num_box']); ?></td>
                       <td><?php echo($row['Nom']." ".$row["Prenom"]); ?></td>
-                      <td><img src="img/Client/<?php $im=($row['photo']);echo($im) ;?>" width="70px" height="50px" alt="Photo Client"></td>
+                      <td><img src="img/Client/<?php $im=($row['photo']);echo($im) ;?>"></td>
                       <td><?php echo($row['Profession']); ?></td>
                       <td><?php echo(date("d-m-Y",strtotime($row['date_vente']))); ?></td>
                       <td><?php echo($row['cuation']); ?></td>
